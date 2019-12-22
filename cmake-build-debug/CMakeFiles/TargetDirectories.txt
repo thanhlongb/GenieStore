@@ -1,0 +1,3 @@
+/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles/GenieStore.dir
