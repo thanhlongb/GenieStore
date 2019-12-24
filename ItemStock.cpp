@@ -21,8 +21,19 @@ Item ItemStock::get(string item_id) {
 }
 
 Item ItemStock::get(int item_index) {
-    return this->items.get(item_index);
+    Item item;
+    try {
+        item = this->items.get(item_index);
+    } catch (int error_code) {
+        throw error_code;
+    }
+    return item;
 }
+
+LinkedList<Item> ItemStock::get_all() {
+    return this->items;
+}
+
 
 int ItemStock::size() {
     return this->items.size();
@@ -41,6 +52,6 @@ void ItemStock::load() {
 }
 
 void ItemStock::save() {
-    // TODO: work on ItemStock::load()
+    // TODO: work on ItemStock::save()
     // TODO: consider creating class called Database to implement save() and load() for both ItemStock and CustomerList
 }

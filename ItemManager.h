@@ -10,6 +10,7 @@
 class ItemManager {
 private:
     ItemStock stock;
+    void print_item(Item item);
 public:
     void add_item();
     void update_item();

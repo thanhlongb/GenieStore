@@ -92,8 +92,16 @@ public:
     }
     T get(int index) {
         int current_index = 0;
+//        if (this->head == NULL) {
+//            // TODO: handle this error
+//            throw "list is empty";
+//        }
+//        if (index >= this->size() || index < 0) {
+//            // TODO: handle this error
+//            throw "out of bound";
+//        }
         node<T>* current_node = this->head;
-        while (current_index != index) {
+        while (current_node != NULL && current_index != index) {
             current_node = current_node->get_next();
             current_index++;
         }

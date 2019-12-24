@@ -11,8 +11,13 @@ using namespace std;
 
 class Helper {
 public:
-    static int prompt_user_option(char* options[]);
-    static string read_user_input();
+    static int prompt_user_option(const string options[]);
+    static string read_user_string();
+    static int read_user_int();
+    static float read_user_float();
+    static int get_size(const string options[]);
+    static void print_options(const string options[], int count);
+private:
 };
 
 

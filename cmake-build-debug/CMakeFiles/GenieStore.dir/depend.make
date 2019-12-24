@@ -25,6 +25,7 @@ CMakeFiles/GenieStore.dir/LinkedList.cpp.o: ../LinkedList.cpp
 
 CMakeFiles/GenieStore.dir/main.cpp.o: ../Helper.h
 CMakeFiles/GenieStore.dir/main.cpp.o: ../Item.h
+CMakeFiles/GenieStore.dir/main.cpp.o: ../ItemManager.h
 CMakeFiles/GenieStore.dir/main.cpp.o: ../ItemStock.h
 CMakeFiles/GenieStore.dir/main.cpp.o: ../LinkedList.h
 CMakeFiles/GenieStore.dir/main.cpp.o: ../main.cpp

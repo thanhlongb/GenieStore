@@ -13,9 +13,9 @@ using namespace std;
 class Item
 {
 public:
-    Item() {};
-    Item(string id, string title, string loan_type, string item_type,
-         int copies, float rental_fee, string rental_status);
+    explicit Item() {};
+    explicit Item(string id, string title, string loan_type, string item_type,
+         int copies, float rental_fee, string rental_status, string genre);
     void restock(int quantity);
     void destock(int quantity);
     string get_id();
@@ -25,10 +25,12 @@ public:
     int get_copies();
     float get_rental_fee();
     string get_rental_status();
-    static const char* LOAN_TYPE[];
-    static const char* ITEM_TYPE[];
-    static const char* RENTAL_STATUS[];
-    static const char* GENRE[];
+    string get_genre();
+    string to_string();
+    static const string LOAN_TYPE[];
+    static const string ITEM_TYPE[];
+    static const string RENTAL_STATUS[];
+    static const string GENRE[];
 private:
     string id;
     string title;
@@ -37,6 +39,7 @@ private:
     int copies;
     float rental_fee;
     string rental_status;
+    string genre;
 };
 
 
