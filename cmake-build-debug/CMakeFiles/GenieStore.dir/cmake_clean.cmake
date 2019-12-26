@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/GenieStore.dir/Customer.cpp.o"
+  "CMakeFiles/GenieStore.dir/CustomerList.cpp.o"
+  "CMakeFiles/GenieStore.dir/CustomerManager.cpp.o"
   "CMakeFiles/GenieStore.dir/Helper.cpp.o"
   "CMakeFiles/GenieStore.dir/Item.cpp.o"
   "CMakeFiles/GenieStore.dir/ItemManager.cpp.o"

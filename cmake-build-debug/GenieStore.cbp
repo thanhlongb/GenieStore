@@ -80,6 +80,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Volumes/btl44@fb/GenieStore/Customer.cpp">
+			<Option target="GenieStore"/>
+		</Unit>
+		<Unit filename="/Volumes/btl44@fb/GenieStore/Customer.h">
+			<Option target="GenieStore"/>
+		</Unit>
+		<Unit filename="/Volumes/btl44@fb/GenieStore/CustomerList.cpp">
+			<Option target="GenieStore"/>
+		</Unit>
+		<Unit filename="/Volumes/btl44@fb/GenieStore/CustomerList.h">
+			<Option target="GenieStore"/>
+		</Unit>
+		<Unit filename="/Volumes/btl44@fb/GenieStore/CustomerManager.cpp">
+			<Option target="GenieStore"/>
+		</Unit>
+		<Unit filename="/Volumes/btl44@fb/GenieStore/CustomerManager.h">
+			<Option target="GenieStore"/>
+		</Unit>
 		<Unit filename="/Volumes/btl44@fb/GenieStore/Helper.cpp">
 			<Option target="GenieStore"/>
 		</Unit>

@@ -15,6 +15,7 @@ public:
     static string read_user_string();
     static int read_user_int();
     static float read_user_float();
+    static string read_next_word(string text, int* current_index, string delimiter = ",");
     static int get_size(const string options[]);
     static void print_options(const string options[], int count);
 private:

@@ -18,7 +18,7 @@ public:
         this->head = NULL;
     }
     ~LinkedList() {
-        // TODO: implement ~LinkedList()
+        // TODO: implement ~LinkedList
     }
     void add(T data) {
         node<T> * new_node = new node<T>(data);
@@ -85,21 +85,16 @@ public:
     }
     T get(string id) {
         node<T>* current_node = this->head;
-        while (current_node != NULL && current_node->get_data().get_id() != id) {
+        while (current_node != NULL && strcmp(current_node->get_data().get_id().c_str(), id.c_str()) != 0) {
             current_node = current_node->get_next();
+        }
+        if (current_node == NULL) {
+            throw 404;
         }
         return current_node->get_data();
     }
     T get(int index) {
         int current_index = 0;
-//        if (this->head == NULL) {
-//            // TODO: handle this error
-//            throw "list is empty";
-//        }
-//        if (index >= this->size() || index < 0) {
-//            // TODO: handle this error
-//            throw "out of bound";
-//        }
         node<T>* current_node = this->head;
         while (current_node != NULL && current_index != index) {
             current_node = current_node->get_next();

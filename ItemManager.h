@@ -10,8 +10,9 @@
 class ItemManager {
 private:
     ItemStock stock;
-    void print_item(Item item);
 public:
+    void test();
+    void set_db_file(string db_file); // TODO: implement this shit
     void add_item();
     void update_item();
     void delete_item();
@@ -21,6 +22,7 @@ public:
     void display_all_items();
     void display_out_of_stock_items();
     void search_for_items();
+    ItemStock* get_stock();
 };
 
 

@@ -8,7 +8,6 @@
 
 int Helper::prompt_user_option(const string options[]) {
     int user_option = 0;
-    // FIXME: fix the warning the following line is showing
     int options_size = Helper::get_size(options);
     print_options(options, options_size);
     do {
@@ -20,7 +19,7 @@ int Helper::prompt_user_option(const string options[]) {
             break;
         }
     } while (true);
-    return user_option;
+    return --user_option;
 }
 
 void Helper::print_options(const string options[], int count) {
@@ -33,39 +32,41 @@ string Helper::read_user_string() {
     const int MAX_INPUT_LENGTH = 100;
     char user_string[MAX_INPUT_LENGTH] = {};
     cin.getline(user_string, MAX_INPUT_LENGTH); //Take in user input from console
-    return string(user_string);
+    if (user_string[0] == '\0') return Helper::read_user_string();
+    return user_string;
 }
 
 int Helper::read_user_int() {
     int user_int = -1;
-    do {
-        cin >> user_int;
-        if (user_int < 0) {
-            cout << "invalid int number, try again!" << endl;
-            // FIXME: shit gone wild when user enter a string
-        } else {
-            break;
-        }
-    } while (true);
-    return user_int;
+    if (cin >> user_int) {
+        return user_int;
+    }
+    cin.clear();
+    cin.ignore(100000, '\n');
+    return Helper::read_user_int();
 }
 
 float Helper::read_user_float() {
     float user_float = -1;
-    do {
-        cin >> user_float;
-        if (user_float < 0) {
-            cout << "invalid float number, try again!" << endl;
-            // FIXME: shit gone wild when user enter a string
-        } else {
-            break;
-        }
-    } while (true);
-    return user_float;
+    if (cin >> user_float) {
+        return user_float;
+    }
+    cin.clear();
+    cin.ignore(100000, '\n');
+    return Helper::read_user_float();
+}
+
+string Helper::read_next_word(string text, int* current_index, string delimiter) {
+    int next_index = text.find(delimiter, *current_index);
+    string next_word = text.substr(*current_index, next_index - *current_index);
+    *current_index = next_index + 1;
+    return next_word;
 }
 
 int Helper::get_size(const string options[]) {
-    cout << options[0] << endl;
-    cout << sizeof(options[1]) << "/" << sizeof(options[0]) << endl;
-    return sizeof(options) / sizeof(options[0]);
+    int size = 0;
+    while (strcmp(options[size].c_str(), ".") != 0) {
+        size++;
+    }
+    return size;
 }

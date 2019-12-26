@@ -123,6 +123,87 @@ GenieStore/fast:
 	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/build
 .PHONY : GenieStore/fast
 
+Customer.o: Customer.cpp.o
+
+.PHONY : Customer.o
+
+# target to build an object file
+Customer.cpp.o:
+	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/Customer.cpp.o
+.PHONY : Customer.cpp.o
+
+Customer.i: Customer.cpp.i
+
+.PHONY : Customer.i
+
+# target to preprocess a source file
+Customer.cpp.i:
+	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/Customer.cpp.i
+.PHONY : Customer.cpp.i
+
+Customer.s: Customer.cpp.s
+
+.PHONY : Customer.s
+
+# target to generate assembly for a file
+Customer.cpp.s:
+	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/Customer.cpp.s
+.PHONY : Customer.cpp.s
+
+CustomerList.o: CustomerList.cpp.o
+
+.PHONY : CustomerList.o
+
+# target to build an object file
+CustomerList.cpp.o:
+	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/CustomerList.cpp.o
+.PHONY : CustomerList.cpp.o
+
+CustomerList.i: CustomerList.cpp.i
+
+.PHONY : CustomerList.i
+
+# target to preprocess a source file
+CustomerList.cpp.i:
+	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/CustomerList.cpp.i
+.PHONY : CustomerList.cpp.i
+
+CustomerList.s: CustomerList.cpp.s
+
+.PHONY : CustomerList.s
+
+# target to generate assembly for a file
+CustomerList.cpp.s:
+	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/CustomerList.cpp.s
+.PHONY : CustomerList.cpp.s
+
+CustomerManager.o: CustomerManager.cpp.o
+
+.PHONY : CustomerManager.o
+
+# target to build an object file
+CustomerManager.cpp.o:
+	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/CustomerManager.cpp.o
+.PHONY : CustomerManager.cpp.o
+
+CustomerManager.i: CustomerManager.cpp.i
+
+.PHONY : CustomerManager.i
+
+# target to preprocess a source file
+CustomerManager.cpp.i:
+	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/CustomerManager.cpp.i
+.PHONY : CustomerManager.cpp.i
+
+CustomerManager.s: CustomerManager.cpp.s
+
+.PHONY : CustomerManager.s
+
+# target to generate assembly for a file
+CustomerManager.cpp.s:
+	$(MAKE) -f CMakeFiles/GenieStore.dir/build.make CMakeFiles/GenieStore.dir/CustomerManager.cpp.s
+.PHONY : CustomerManager.cpp.s
+
 Helper.o: Helper.cpp.o
 
 .PHONY : Helper.o
@@ -321,6 +402,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... GenieStore"
+	@echo "... Customer.o"
+	@echo "... Customer.i"
+	@echo "... Customer.s"
+	@echo "... CustomerList.o"
+	@echo "... CustomerList.i"
+	@echo "... CustomerList.s"
+	@echo "... CustomerManager.o"
+	@echo "... CustomerManager.i"
+	@echo "... CustomerManager.s"
 	@echo "... Helper.o"
 	@echo "... Helper.i"
 	@echo "... Helper.s"

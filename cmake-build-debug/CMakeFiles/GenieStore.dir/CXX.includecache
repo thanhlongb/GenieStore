@@ -6,13 +6,49 @@
 
 #IncludeRegexTransform: 
 
-/Volumes/btl44@fb/GenieStore/Helper.cpp
+/Volumes/btl44@fb/GenieStore/Customer.h
+string
+-
+Item.h
+/Volumes/btl44@fb/GenieStore/Item.h
+LinkedList.h
+/Volumes/btl44@fb/GenieStore/LinkedList.h
+
+/Volumes/btl44@fb/GenieStore/CustomerList.h
+Customer.h
+/Volumes/btl44@fb/GenieStore/Customer.h
+LinkedList.h
+/Volumes/btl44@fb/GenieStore/LinkedList.h
+
+/Volumes/btl44@fb/GenieStore/CustomerManager.cpp
 iostream
 -
 Helper.h
 /Volumes/btl44@fb/GenieStore/Helper.h
+CustomerManager.h
+/Volumes/btl44@fb/GenieStore/CustomerManager.h
+
+/Volumes/btl44@fb/GenieStore/CustomerManager.h
+CustomerList.h
+/Volumes/btl44@fb/GenieStore/CustomerList.h
 
 /Volumes/btl44@fb/GenieStore/Helper.h
 string
+-
+
+/Volumes/btl44@fb/GenieStore/Item.h
+string
+-
+cstring
+-
+
+/Volumes/btl44@fb/GenieStore/LinkedList.h
+string
+-
+node.h
+/Volumes/btl44@fb/GenieStore/node.h
+
+/Volumes/btl44@fb/GenieStore/node.h
+cstddef
 -
 

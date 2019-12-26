@@ -148,6 +148,45 @@ CMakeFiles/GenieStore.dir/Helper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/Helper.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/Helper.cpp -o CMakeFiles/GenieStore.dir/Helper.cpp.s
 
+CMakeFiles/GenieStore.dir/Customer.cpp.o: CMakeFiles/GenieStore.dir/flags.make
+CMakeFiles/GenieStore.dir/Customer.cpp.o: ../Customer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GenieStore.dir/Customer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/Customer.cpp.o -c /Volumes/btl44@fb/GenieStore/Customer.cpp
+
+CMakeFiles/GenieStore.dir/Customer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/Customer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/Customer.cpp > CMakeFiles/GenieStore.dir/Customer.cpp.i
+
+CMakeFiles/GenieStore.dir/Customer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/Customer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/Customer.cpp -o CMakeFiles/GenieStore.dir/Customer.cpp.s
+
+CMakeFiles/GenieStore.dir/CustomerList.cpp.o: CMakeFiles/GenieStore.dir/flags.make
+CMakeFiles/GenieStore.dir/CustomerList.cpp.o: ../CustomerList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GenieStore.dir/CustomerList.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/CustomerList.cpp.o -c /Volumes/btl44@fb/GenieStore/CustomerList.cpp
+
+CMakeFiles/GenieStore.dir/CustomerList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/CustomerList.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/CustomerList.cpp > CMakeFiles/GenieStore.dir/CustomerList.cpp.i
+
+CMakeFiles/GenieStore.dir/CustomerList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/CustomerList.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/CustomerList.cpp -o CMakeFiles/GenieStore.dir/CustomerList.cpp.s
+
+CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: CMakeFiles/GenieStore.dir/flags.make
+CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: ../CustomerManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GenieStore.dir/CustomerManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/CustomerManager.cpp.o -c /Volumes/btl44@fb/GenieStore/CustomerManager.cpp
+
+CMakeFiles/GenieStore.dir/CustomerManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/CustomerManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/CustomerManager.cpp > CMakeFiles/GenieStore.dir/CustomerManager.cpp.i
+
+CMakeFiles/GenieStore.dir/CustomerManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/CustomerManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/CustomerManager.cpp -o CMakeFiles/GenieStore.dir/CustomerManager.cpp.s
+
 # Object files for target GenieStore
 GenieStore_OBJECTS = \
 "CMakeFiles/GenieStore.dir/main.cpp.o" \
@@ -156,7 +195,10 @@ GenieStore_OBJECTS = \
 "CMakeFiles/GenieStore.dir/node.cpp.o" \
 "CMakeFiles/GenieStore.dir/LinkedList.cpp.o" \
 "CMakeFiles/GenieStore.dir/ItemManager.cpp.o" \
-"CMakeFiles/GenieStore.dir/Helper.cpp.o"
+"CMakeFiles/GenieStore.dir/Helper.cpp.o" \
+"CMakeFiles/GenieStore.dir/Customer.cpp.o" \
+"CMakeFiles/GenieStore.dir/CustomerList.cpp.o" \
+"CMakeFiles/GenieStore.dir/CustomerManager.cpp.o"
 
 # External object files for target GenieStore
 GenieStore_EXTERNAL_OBJECTS =
@@ -168,9 +210,12 @@ GenieStore: CMakeFiles/GenieStore.dir/node.cpp.o
 GenieStore: CMakeFiles/GenieStore.dir/LinkedList.cpp.o
 GenieStore: CMakeFiles/GenieStore.dir/ItemManager.cpp.o
 GenieStore: CMakeFiles/GenieStore.dir/Helper.cpp.o
+GenieStore: CMakeFiles/GenieStore.dir/Customer.cpp.o
+GenieStore: CMakeFiles/GenieStore.dir/CustomerList.cpp.o
+GenieStore: CMakeFiles/GenieStore.dir/CustomerManager.cpp.o
 GenieStore: CMakeFiles/GenieStore.dir/build.make
 GenieStore: CMakeFiles/GenieStore.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable GenieStore"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable GenieStore"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GenieStore.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

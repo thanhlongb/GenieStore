@@ -4,6 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Volumes/btl44@fb/GenieStore/Customer.cpp" "/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles/GenieStore.dir/Customer.cpp.o"
+  "/Volumes/btl44@fb/GenieStore/CustomerList.cpp" "/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles/GenieStore.dir/CustomerList.cpp.o"
+  "/Volumes/btl44@fb/GenieStore/CustomerManager.cpp" "/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles/GenieStore.dir/CustomerManager.cpp.o"
   "/Volumes/btl44@fb/GenieStore/Helper.cpp" "/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles/GenieStore.dir/Helper.cpp.o"
   "/Volumes/btl44@fb/GenieStore/Item.cpp" "/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles/GenieStore.dir/Item.cpp.o"
   "/Volumes/btl44@fb/GenieStore/ItemManager.cpp" "/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles/GenieStore.dir/ItemManager.cpp.o"

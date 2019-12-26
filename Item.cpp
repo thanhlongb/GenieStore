@@ -1,19 +1,32 @@
 //
 // Created by longb on 12/19/19.
 //
-
+#include "Helper.h"
 #include "Item.h"
 
-Item::Item(string id, string title, string loan_type,
-           string item_type, int copies, float rental_fee,
-           string rental_status, string genre) {
+Item::Item(string raw_data) {
+    int current_index = 0;
+    this->id = Helper::read_next_word(raw_data, &current_index);
+    this->title = Helper::read_next_word(raw_data, &current_index);
+    this->item_type = Helper::read_next_word(raw_data, &current_index);
+    this->loan_type = Helper::read_next_word(raw_data, &current_index);
+    this->copies = atoi(Helper::read_next_word(raw_data, &current_index).c_str());
+    this->rental_fee = atof(Helper::read_next_word(raw_data, &current_index).c_str());
+    this->genre = Item::GENRE[0];
+    if (!this->is_game()) {
+        this->genre = Helper::read_next_word(raw_data, &current_index);
+    }
+}
+
+Item::Item(string id, string title, string loan_type, string item_type,
+           int copies, float rental_fee, string genre) {
     this->id = id;
     this->title = title;
     this->loan_type = loan_type;
     this->item_type = item_type;
     this->copies = copies;
     this->rental_fee = rental_fee;
-    this->rental_status = rental_status;
+    this->rental_status = this->get_rental_status();
     this->genre = genre;
 }
 
@@ -54,28 +67,61 @@ float Item::get_rental_fee() {
 }
 
 string Item::get_rental_status() {
-    return this->rental_status;
+    return (this->copies == 0) ? Item::RENTAL_STATUS[1] : Item::RENTAL_STATUS[0];
 }
 
 string Item::get_genre() {
     return this->genre;
 }
 
+void Item::set_title(string title) {
+    this->title = title;
+}
+
+void Item::set_loan_type(string loan_type) {
+    this->loan_type = loan_type;
+}
+
+void Item::set_item_type(string item_type) {
+    this->item_type = item_type;
+}
+
+void Item::set_copies(int copies) {
+    this->copies = copies;
+}
+
+void Item::set_rental_fee(float rental_fee) {
+    this->rental_fee = rental_fee;
+}
+
+void Item::set_genre(string genre) {
+    this->genre = genre;
+}
+
 string Item::to_string() {
     //ID,Title,Rent type,Loan type,Number of copies,rental fee,[genre]
     string item_string = "";
     item_string.append(this->id + ",");
+    item_string.append(this->title + ",");
     item_string.append(this->item_type + ",");
     item_string.append(this->loan_type + ",");
     item_string.append(::to_string(this->copies) + ",");
-    item_string.append(::to_string(this->rental_fee));
-    if (strcmp(this->item_type.c_str(), "game") != 0) {
+    item_string.append(::to_string(this->rental_fee).substr(0, ::to_string(this->rental_fee).find(".") + 3));
+    if (!this->is_game()) {
         item_string.append("," + this->genre);
     }
     return item_string;
 }
 
-const string Item::LOAN_TYPE[] = {"2-day", "1-week"};
-const string Item::ITEM_TYPE[] = {"record", "dvd", "game"};
-const string Item::RENTAL_STATUS[] = {"available", "not_available"};
-const string Item::GENRE[] = {"action", "horror", "drama", "comedy"};
+bool Item::is_game() {
+    return (strcmp(this->item_type.c_str(), "Game") == 0);
+}
+
+bool Item::is_2_day_loan() {
+    return (strcmp(this->loan_type.c_str(), "2-day") == 0);
+}
+
+const string Item::LOAN_TYPE[] = {"2-day", "1-week", "."};
+const string Item::ITEM_TYPE[] = {"Record", "DVD", "Game", "."};
+const string Item::RENTAL_STATUS[] = {"available", "borrowed", "."};
+const string Item::GENRE[] = {"Action", "Horror", "Drama", "Comedy", "."};

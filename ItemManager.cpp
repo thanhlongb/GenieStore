@@ -6,6 +6,17 @@
 #include "Helper.h"
 #include "ItemManager.h"
 
+void ItemManager::test() {
+    Item item("T123-123", "hello world", Item::LOAN_TYPE[1],
+            Item::ITEM_TYPE[2], 12, 32.12, Item::GENRE[2]);
+    Item item1("T645-156", "fuk u", Item::LOAN_TYPE[1],
+              Item::ITEM_TYPE[2], 0, 32.12, Item::GENRE[2]);
+    this->stock.add(item);
+    this->stock.add(item1);
+    this->stock.load();
+//    this->stock.save();
+}
+
 void ItemManager::add_item() {
     cout << "Please provide information for new item:" << endl;
     cout << "Item id: ";
@@ -20,39 +31,99 @@ void ItemManager::add_item() {
     int copies = Helper::read_user_int();
     cout << "Item rental fee: ";
     float rental_fee = Helper::read_user_float();
-    cout << "Item rental status: " << endl;
-    int rental_status = Helper::prompt_user_option(Item::RENTAL_STATUS);
     int genre = 0; // default value
-    if (strcmp(Item::ITEM_TYPE[item_type].c_str(), "game") != 0) {
-        genre = Helper::prompt_user_option(Item::GENRE);
+    if (strcmp(Item::ITEM_TYPE[item_type].c_str(), "Game") != 0) {
         cout << "Item genre: " << endl;
+        genre = Helper::prompt_user_option(Item::GENRE);
     }
     // TODO: validate ID format
     Item new_item(id, title,
                   Item::LOAN_TYPE[loan_type],
                   Item::ITEM_TYPE[item_type],
                   copies, rental_fee,
-                  Item::RENTAL_STATUS[rental_status],
                   Item::GENRE[genre]);
     this->stock.add(new_item);
 }
 
 void ItemManager::update_item() {
+    const string UPDATE_OPTIONS[] = {"title", "loan type",
+                                     "item type", "copies",
+                                     "rental fee", "genre",
+                                     "confirm update", "."};
     cout << "Enter ID of the item you want to update: ";
     string update_item_id = Helper::read_user_string();
-    Item update_item = this->stock.get(update_item_id);
-    // TODO: implement ItemManager::update_time()
+    Item item;
+    try {
+        item = this->stock.get(update_item_id);
+    } catch (const char* error) {
+        cout << error << endl;
+        return;
+    }
+    bool confirmed_update = false;
+    while (!confirmed_update) {
+        cout << "Select the field you want to edit: " << endl;
+        int selected_option = Helper::prompt_user_option(UPDATE_OPTIONS);
+        switch (selected_option) {
+            case 0: {
+                cout << "Item title (old: '" << item.get_title() << "'): ";
+                string title = Helper::read_user_string();
+                item.set_title(title);
+                break;
+            }
+            case 1: {
+                cout << "Item loan type (old: '" << item.get_loan_type() << "'): " << endl;
+                int loan_type = Helper::prompt_user_option(Item::LOAN_TYPE);
+                item.set_loan_type(Item::LOAN_TYPE[loan_type]);
+                break;
+            }
+            case 2: {
+                cout << "Item type (old: '" << item.get_item_type() << "'): " << endl;
+                int item_type = Helper::prompt_user_option(Item::ITEM_TYPE);
+                item.set_item_type(Item::ITEM_TYPE[item_type]);
+                break;
+            }
+            case 3: {
+                cout << "Item copies (old: '" << item.get_copies() << "'): ";
+                int copies = Helper::read_user_int();
+                item.set_copies(copies);
+                break;
+            }
+            case 4: {
+                cout << "Item rental fee (old: '" << item.get_rental_fee() << "'): ";
+                float rental_fee = Helper::read_user_float();
+                item.set_rental_fee(rental_fee);
+                break;
+            }
+            case 5: {
+                if (item.is_game()) {
+                    cout << "Games doesn't have genre." << endl;
+                    break;
+                }
+                int genre = 0; // default value
+                cout << "Item genre (old: '" << item.get_genre() << "'): " << endl;
+                genre = Helper::prompt_user_option(Item::GENRE);
+                item.set_genre(Item::GENRE[genre]);
+                break;
+            }
+            case 6: {
+                confirmed_update = true;
+                break;
+            }
+            default: break;
+        }
+    }
+    try {
+        this->stock.update(update_item_id, item);
+    } catch (const char* error) {
+        cout << error << endl;
+    }
 }
 
 void ItemManager::delete_item() {
     cout << "Enter ID of the item you want to delete: ";
     string delete_item_id = Helper::read_user_string();
-    try {
-        this->stock.remove(delete_item_id);
-        cout << "Item deleted.";
-    } catch (const char* error) {
-        cout << error << endl;
-    }
+    this->stock.remove(delete_item_id);
+    cout << "Item deleted.";
 }
 
 void ItemManager::restock_item() {
@@ -84,10 +155,29 @@ void ItemManager::display_all_items() {
     }
 }
 
-void display_out_of_stock_items();
-void search_for_items();
-
-void ItemManager::print_item(Item item) {
-    if (item.get_item_type() != "game") {
+void ItemManager::display_out_of_stock_items() {
+    LinkedList<Item> all_items = this->stock.get_all();
+    for (int i = 0; i < all_items.size(); i++) {
+        Item item = all_items.get(i);
+        if (item.get_copies() == 0) {
+            cout << item.to_string() << endl;
+        }
     }
+}
+
+void ItemManager::search_for_items() {
+    // TODO: add sorting
+    cout << "Enter the keyword of the item you want to search: ";
+    string keyword = Helper::read_user_string();
+    LinkedList<Item> all_items = this->stock.get_all();
+    for (int i = 0; i < all_items.size(); i++) {
+        Item item = all_items.get(i);
+        if (item.to_string().find(keyword) != string::npos) {
+            cout << item.to_string() << endl;
+        }
+    }
+}
+
+ItemStock* ItemManager::get_stock() {
+    return &this->stock;
 }

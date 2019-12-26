@@ -1,18 +1,31 @@
 #include <iostream>
 #include "ItemManager.h"
+#include "CustomerManager.h"
 #include "ItemStock.h"
 #include "Item.h"
 #include "Helper.h"
 using namespace std;
 
+
 int main() {
-    cout << "Hello, World!" << endl;
+    CustomerManager customer_manager;
+    customer_manager.test();
+//    cout << "Hello, World!" << endl;
+//    int index = 0;
+//    string a = "I001-2001,Medal of Honour,Game,1-week,3,3.99";
+//    if (a.find("Medal") != string::npos) {
+//        cout << "found";
+//    }
+
 //    const string loan_type[] = {"", "world", "my", "name"};
 //    cout << sizeof(Item::GENRE) / sizeof(loan_type[0]);
-    ItemManager manager;
-    manager.add_item();
-    manager.add_item();
-    manager.display_all_items();
+//    ItemManager manager;
+//    manager.test();
+//    manager.search_for_items();
+//    manager.update_item();
+//    manager.display_all_items();
+
+//    manager.search_for_items();
 //    string a = "";
 //    a.append("frick");
 //    cout << a;

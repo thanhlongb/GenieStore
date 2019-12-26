@@ -11,6 +11,7 @@ class ItemStock
 {
 private:
     LinkedList<Item> items;
+    string data_file_name = "items.txt";
 public:
     ItemStock() {};
     void add(Item item);
@@ -22,6 +23,7 @@ public:
     LinkedList<Item> get_all();
     void restock(string item_id, int quantity);
     void destock(string item_id, int quantity);
+    void set_data_file_name(string data_file_name);
     void load();
     void save();
 };
