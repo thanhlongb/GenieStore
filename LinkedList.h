@@ -93,6 +93,15 @@ public:
         }
         return current_node->get_data();
     }
+    bool exist(string id) {
+        T data;
+        try {
+            data = this->get(id);
+            return true;
+        } catch (const int error_code) {
+            return false;
+        }
+    }
     T get(int index) {
         int current_index = 0;
         node<T>* current_node = this->head;

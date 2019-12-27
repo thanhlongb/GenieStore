@@ -30,6 +30,7 @@ public:
     string get_address();
     string get_phone();
     string get_tier();
+    LinkedList<Item> get_rentals();
     int get_point();
     void set_name(string name);
     void set_address(string address);

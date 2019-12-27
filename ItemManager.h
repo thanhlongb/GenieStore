@@ -12,17 +12,15 @@ private:
     ItemStock stock;
 public:
     void test();
-    void set_db_file(string db_file); // TODO: implement this shit
     void add_item();
     void update_item();
     void delete_item();
     void restock_item();
-    void rent_an_item();
-    void return_an_item();
     void display_all_items();
     void display_out_of_stock_items();
     void search_for_items();
-    ItemStock* get_stock();
+    ItemStock* get_stock_pointer();
+    void set_db_file(string db_file);
 };
 
 

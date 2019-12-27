@@ -2,7 +2,6 @@
 // Created by longb on 12/26/19.
 //
 
-#include <iostream>
 #include "Helper.h"
 #include "Customer.h"
 
@@ -44,8 +43,11 @@ string Customer::get_phone() {
 }
 
 string Customer::get_tier() {
-    cout << this->tier << endl;
     return this->tier;
+}
+
+LinkedList<Item> Customer::get_rentals() {
+    return this->rentals;
 }
 
 int Customer::get_point() {

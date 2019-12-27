@@ -12,6 +12,18 @@ void CustomerManager::test() {
     this->display_a_group_of_customers();
 }
 
+Customer CustomerManager::prompt_customer() {
+    Customer customer;
+    cout << "Enter the customer's ID: ";
+    string customer_id = Helper::read_user_string();
+    try {
+        customer = this->customer_list.get(customer_id);
+    } catch (const char* error) {
+        cout << error << endl;
+    }
+    return customer;
+}
+
 void CustomerManager::add_customer() {
     cout << "Please provide information for new customer:" << endl;
     cout << "Customer id: ";
@@ -96,6 +108,76 @@ void CustomerManager::promote_a_customer() {
     }
 }
 
+void CustomerManager::rent_an_item() {
+    Item item;
+    Customer customer;
+    cout << "Enter ID of the item customer want to rent: ";
+    string item_id = Helper::read_user_string();
+    try {
+        item = this->stock->get(item_id);
+    } catch (const char* error) {
+        cout << error << endl;
+    }
+    cout << "Enter ID of the customer who want to rent '" << item.get_title() << "': ";
+    string customer_id = Helper::read_user_string();
+    try {
+        customer = this->customer_list.get(customer_id);
+    } catch (const char* error) {
+        cout << error << endl;
+    }
+    if (customer.get_rentals().exist(item_id)) {
+        // if the customer already renting this item
+        cout << "The customer already renting this item.";
+        return;
+    }
+    item.destock(1);
+    customer.get_rentals().add(item);
+    this->customer_list.update(customer_id, customer);
+    this->stock->update(item_id, item);
+    // TODO: implement CustomerManager::rent_an_item()
+}
+
+void CustomerManager::return_an_item() {
+    // TODO: implement CustomerManager::return_an_item()
+    Customer customer;
+    Item item;
+    try {
+        customer = this->prompt_customer();
+    } catch (const char* error) {
+        cout << error << endl;
+        return;
+    }
+    if (customer.get_rentals().size() == 0) {
+        // this customer isn't holding any item
+        cout << "This customer isn't holding any item." << endl;
+        return;
+    }
+    this->display_all_items_of_a_customer(customer);
+    cout << "Enter ID of the item customer want to return: ";
+    string item_id = Helper::read_user_string();
+    if (!customer.get_rentals().exist(item_id)) {
+        cout << "Customer isn't renting this item." << endl;
+        return;
+    }
+    try {
+        item = this->stock->get(item_id);
+    } catch (const char* error) {
+        cout << error << endl;
+    }
+    item.restock(1);
+    customer.get_rentals().remove(item_id);
+    this->stock->update(item_id, item);
+    this->customer_list.update(customer.get_id(), customer);
+}
+
+void CustomerManager::display_all_items_of_a_customer(Customer customer) {
+    cout << "Items that '" << customer.get_name() << "' is renting: " << endl;
+    for (int i = 0; i < customer.get_rentals().size(); i++) {
+        Item item = customer.get_rentals().get(i);
+        cout << "[" << item.get_id() << "] " << item.get_title() << endl;
+    }
+}
+
 void CustomerManager::display_all_customers() {
     LinkedList<Customer> all_customers = this->customer_list.get_all();
     for (int i = 0; i < all_customers.size(); i++) {
@@ -127,4 +209,8 @@ void CustomerManager::search_for_customers() {
             cout << customer.to_string() << endl;
         }
     }
+}
+
+void CustomerManager::inject_item_stock(ItemStock* stock) {
+    this->stock = stock;
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Item.h"
 #include "Helper.h"
+#include "Customer.h"
 #include "ItemManager.h"
 
 void ItemManager::test() {
@@ -139,14 +140,6 @@ void ItemManager::restock_item() {
     }
 }
 
-void ItemManager::rent_an_item() {
-    // TODO: implement ItemManager::rent_an_item()
-}
-
-void ItemManager::return_an_item() {
-    // TODO: implement ItemManager::return_an_item()
-}
-
 void ItemManager::display_all_items() {
     LinkedList<Item> all_items = this->stock.get_all();
     for (int i = 0; i < all_items.size(); i++) {
@@ -178,6 +171,10 @@ void ItemManager::search_for_items() {
     }
 }
 
-ItemStock* ItemManager::get_stock() {
+ItemStock* ItemManager::get_stock_pointer() {
     return &this->stock;
+}
+
+void ItemManager::set_db_file(string db_file) {
+    this->stock.set_data_file_name(db_file);
 }
