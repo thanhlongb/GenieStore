@@ -12,7 +12,6 @@ class CustomerManager {
 private:
     CustomerList customer_list;
     ItemStock* stock;
-    Customer prompt_customer();
 public:
     void test();
     void add_customer();
@@ -25,6 +24,9 @@ public:
     void display_a_group_of_customers();
     void search_for_customers();
     void inject_item_stock(ItemStock* stock);
+    void set_db_file(string db_file);
+    void load_customers();
+    void save_customers();
 };
 
 

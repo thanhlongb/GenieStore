@@ -70,3 +70,12 @@ int Helper::get_size(const string options[]) {
     }
     return size;
 }
+
+int Helper::find_char_occurrence(string input_string, char c) {
+    int count = 0;
+    for (int i = 0; i < input_string.length(); i++) {
+        if (input_string.at(i) == c) count++;
+    }
+    return count;
+}
+

@@ -51,6 +51,7 @@ LinkedList<Item> Customer::get_rentals() {
 }
 
 int Customer::get_point() {
+    // TODO: try to implement this shit
     return (this->is_vip()) ? this->point : 0;
 }
 
@@ -70,7 +71,12 @@ void Customer::set_tier(string tier) {
     this->tier = tier;
 }
 
+void Customer::add_rental(Item item) {
+    this->rentals.add(item);
+}
+
 void Customer::rent_item(Item item) {
+    // TODO: try to implement this shit
     if (this->is_guest()) {
         if (this->rentals.size() >= 2)
             throw "Guest customer can rent 2 items at a time.";
@@ -83,10 +89,12 @@ void Customer::rent_item(Item item) {
 }
 
 void Customer::return_item(string item_id) {
+    // TODO: try to implement this shit
     this->rentals.remove(item_id);
 }
 
 void Customer::promote() {
+    // TODO: how to make sure the customer has successfully RENTED & RETURNED more than 3 items???
     if (this->rentals.size() > 3) {
         if (this->is_guest()) {
             this->tier = TIER[1];

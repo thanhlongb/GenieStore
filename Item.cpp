@@ -5,21 +5,26 @@
 #include "Item.h"
 
 Item::Item(string raw_data) {
-    int current_index = 0;
-    this->id = Helper::read_next_word(raw_data, &current_index);
-    this->title = Helper::read_next_word(raw_data, &current_index);
-    this->item_type = Helper::read_next_word(raw_data, &current_index);
-    this->loan_type = Helper::read_next_word(raw_data, &current_index);
-    this->copies = atoi(Helper::read_next_word(raw_data, &current_index).c_str());
-    this->rental_fee = atof(Helper::read_next_word(raw_data, &current_index).c_str());
-    this->genre = Item::GENRE[0];
-    if (!this->is_game()) {
-        this->genre = Helper::read_next_word(raw_data, &current_index);
+    if (Helper::find_char_occurrence(raw_data, ',') == 0) {
+        this->id = raw_data;
+    } else {
+        int current_index = 0;
+        this->id = Helper::read_next_word(raw_data, &current_index);
+        this->title = Helper::read_next_word(raw_data, &current_index);
+        this->item_type = Helper::read_next_word(raw_data, &current_index);
+        this->loan_type = Helper::read_next_word(raw_data, &current_index);
+        this->copies = atoi(Helper::read_next_word(raw_data, &current_index).c_str());
+        this->rental_fee = atof(Helper::read_next_word(raw_data, &current_index).c_str());
+        this->genre = Item::GENRE[0];
+        if (!this->is_game()) {
+            this->genre = Helper::read_next_word(raw_data, &current_index);
+        }
     }
 }
 
 Item::Item(string id, string title, string loan_type, string item_type,
            int copies, float rental_fee, string genre) {
+    if (!is_valid_id(id)) throw "Invalid item id.";
     this->id = id;
     this->title = title;
     this->loan_type = loan_type;
@@ -115,6 +120,20 @@ string Item::to_string() {
 
 bool Item::is_game() {
     return (strcmp(this->item_type.c_str(), "Game") == 0);
+}
+
+bool Item::is_valid_id(string id) {
+    if (id.length() != 9) return false;
+    if (id.at(0) != 'I') return false;
+    if (!isdigit(id.at(1)) ||
+        !isdigit(id.at(2)) ||
+        !isdigit(id.at(3)) ||
+        !isdigit(id.at(5)) ||
+        !isdigit(id.at(6)) ||
+        !isdigit(id.at(7)) ||
+        !isdigit(id.at(8))) return false;
+    if (id.at(4) != '-') return false;
+    return true;
 }
 
 bool Item::is_2_day_loan() {

@@ -2,6 +2,7 @@
 // Created by longb on 12/19/19.
 //
 #include <fstream>
+#include <iostream>
 #include "ItemStock.h"
 #include "Helper.h"
 
@@ -78,6 +79,7 @@ void ItemStock::set_data_file_name(string data_file_name) {
 
 void ItemStock::load() {
     string line;
+    int count = 0;
     ifstream file(this->data_file_name);
     if (file.is_open()) {
         while (getline(file, line)) {

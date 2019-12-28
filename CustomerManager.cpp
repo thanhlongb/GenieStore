@@ -8,20 +8,8 @@
 
 void CustomerManager::test() {
     this->customer_list.load();
+    this->rent_an_item();
     this->display_all_customers();
-    this->display_a_group_of_customers();
-}
-
-Customer CustomerManager::prompt_customer() {
-    Customer customer;
-    cout << "Enter the customer's ID: ";
-    string customer_id = Helper::read_user_string();
-    try {
-        customer = this->customer_list.get(customer_id);
-    } catch (const char* error) {
-        cout << error << endl;
-    }
-    return customer;
 }
 
 void CustomerManager::add_customer() {
@@ -38,7 +26,12 @@ void CustomerManager::add_customer() {
     int tier = Helper::prompt_user_option(Customer::TIER);
     // TODO: validate ID format
     Customer new_customer(id, name, address, phone, Customer::TIER[tier]);
-    this->customer_list.add(new_customer);
+    try {
+        this->customer_list.add(new_customer);
+    } catch (const char* error) {
+        cout << error << endl;
+        return;
+    }
 }
 
 void CustomerManager::update_customer() {
@@ -102,6 +95,7 @@ void CustomerManager::promote_a_customer() {
     try {
         customer = this->customer_list.get(customer_id);
         customer.promote();
+        this->customer_list.update(customer.get_id(), customer);
     } catch (const char* error) {
         cout << error << endl;
         return;
@@ -111,12 +105,13 @@ void CustomerManager::promote_a_customer() {
 void CustomerManager::rent_an_item() {
     Item item;
     Customer customer;
-    cout << "Enter ID of the item customer want to rent: ";
+    cout << "Enter ID of the item customer want to rent an item: ";
     string item_id = Helper::read_user_string();
     try {
         item = this->stock->get(item_id);
     } catch (const char* error) {
         cout << error << endl;
+        return;
     }
     cout << "Enter ID of the customer who want to rent '" << item.get_title() << "': ";
     string customer_id = Helper::read_user_string();
@@ -124,25 +119,26 @@ void CustomerManager::rent_an_item() {
         customer = this->customer_list.get(customer_id);
     } catch (const char* error) {
         cout << error << endl;
+        return;
     }
     if (customer.get_rentals().exist(item_id)) {
         // if the customer already renting this item
-        cout << "The customer already renting this item.";
+        cout << "The customer already renting this item." << endl;
         return;
     }
     item.destock(1);
-    customer.get_rentals().add(item);
+    customer.add_rental(item);
     this->customer_list.update(customer_id, customer);
     this->stock->update(item_id, item);
-    // TODO: implement CustomerManager::rent_an_item()
 }
 
 void CustomerManager::return_an_item() {
-    // TODO: implement CustomerManager::return_an_item()
     Customer customer;
     Item item;
+    cout << "Enter the ID of the customer who want to return an item: ";
+    string customer_id = Helper::read_user_string();
     try {
-        customer = this->prompt_customer();
+        customer = this->customer_list.get(customer_id);
     } catch (const char* error) {
         cout << error << endl;
         return;
@@ -162,7 +158,11 @@ void CustomerManager::return_an_item() {
     try {
         item = this->stock->get(item_id);
     } catch (const char* error) {
-        cout << error << endl;
+        cout << "This item might be deleted from stock." << endl;
+        // removing the item from the customer rental list anyway
+        customer.get_rentals().remove(item_id);
+        this->customer_list.update(customer.get_id(), customer);
+        return;
     }
     item.restock(1);
     customer.get_rentals().remove(item_id);
@@ -174,11 +174,12 @@ void CustomerManager::display_all_items_of_a_customer(Customer customer) {
     cout << "Items that '" << customer.get_name() << "' is renting: " << endl;
     for (int i = 0; i < customer.get_rentals().size(); i++) {
         Item item = customer.get_rentals().get(i);
-        cout << "[" << item.get_id() << "] " << item.get_title() << endl;
+        cout << item.get_id() << endl;
     }
 }
 
 void CustomerManager::display_all_customers() {
+    cout << "Here are all the customers in the database: " << endl;
     LinkedList<Customer> all_customers = this->customer_list.get_all();
     for (int i = 0; i < all_customers.size(); i++) {
         Customer customer = all_customers.get(i);
@@ -213,4 +214,24 @@ void CustomerManager::search_for_customers() {
 
 void CustomerManager::inject_item_stock(ItemStock* stock) {
     this->stock = stock;
+}
+
+void CustomerManager::set_db_file(string db_file) {
+    this->customer_list.set_data_file_name(db_file);
+}
+
+void CustomerManager::load_customers() {
+    try {
+        this->customer_list.load();
+    } catch (const char* error) {
+        cout << error << endl;
+    }
+}
+
+void CustomerManager::save_customers() {
+    try {
+        this->customer_list.save();
+    } catch (const char* error) {
+        cout << error << endl;
+    }
 }

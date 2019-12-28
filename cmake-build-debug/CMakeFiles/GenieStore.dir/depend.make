@@ -21,6 +21,7 @@ CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: ../CustomerManager.cpp
 CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: ../CustomerManager.h
 CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: ../Helper.h
 CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: ../Item.h
+CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: ../ItemStock.h
 CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: ../LinkedList.h
 CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: ../node.h
 
@@ -31,6 +32,7 @@ CMakeFiles/GenieStore.dir/Item.cpp.o: ../Helper.h
 CMakeFiles/GenieStore.dir/Item.cpp.o: ../Item.cpp
 CMakeFiles/GenieStore.dir/Item.cpp.o: ../Item.h
 
+CMakeFiles/GenieStore.dir/ItemManager.cpp.o: ../Customer.h
 CMakeFiles/GenieStore.dir/ItemManager.cpp.o: ../Helper.h
 CMakeFiles/GenieStore.dir/ItemManager.cpp.o: ../Item.h
 CMakeFiles/GenieStore.dir/ItemManager.cpp.o: ../ItemManager.cpp

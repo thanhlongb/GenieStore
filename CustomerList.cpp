@@ -3,6 +3,7 @@
 //
 
 #include <fstream>
+#include <iostream>
 #include "CustomerList.h"
 
 void CustomerList::add(Customer customer) {
@@ -29,6 +30,10 @@ LinkedList<Customer> CustomerList::get_all() {
     return this->customers;
 }
 
+void CustomerList::set_data_file_name(string data_file_name) {
+    this->data_file_name = data_file_name;
+}
+
 void CustomerList::load() {
     string line;
     ifstream file(this->data_file_name);
@@ -39,8 +44,9 @@ void CustomerList::load() {
                 customer = Customer(line);
                 this->customers.add(customer);
             } else if (line[0] == 'I') { // this line contains item id
-//                this->
-                // fuck this shit
+                Item item(line);
+                customer.add_rental(item);
+                this->customers.update(customer.get_id(), customer);
             }
         }
     } else {
@@ -53,8 +59,12 @@ void CustomerList::save() {
     ofstream file(this->data_file_name);
     if (file.is_open()) {
         for (int i = this->customers.size() - 1; i >= 0; i--) {
-            file << this->customers.get(i).to_string() << endl;
-            // fuck this
+            Customer customer = this->customers.get(i);
+            file << customer.to_string() << endl;
+            for (int o = customer.get_rentals().size() - 1; o >= 0; o--) {
+                Item item = customer.get_rentals().get(o);
+                file << item.get_id() << endl;
+            }
         }
         file.close();
     } else {

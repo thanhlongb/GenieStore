@@ -36,6 +36,7 @@ public:
     void set_address(string address);
     void set_phone(string phone);
     void set_tier(string tier);
+    void add_rental(Item item);
     void rent_item(Item item);
     void return_item(string item_id);
     void promote();

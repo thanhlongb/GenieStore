@@ -1,7 +1,7 @@
 //
 // Created by longb on 12/19/19.
 //
-#include <cstddef>
+#include <cstddef> // FIXME: need this shit for NULL
 
 #ifndef GENIESTORE_NODE_H
 #define GENIESTORE_NODE_H

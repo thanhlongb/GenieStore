@@ -11,7 +11,7 @@ class ItemManager {
 private:
     ItemStock stock;
 public:
-    void test();
+    ItemManager() {};
     void add_item();
     void update_item();
     void delete_item();
@@ -21,6 +21,8 @@ public:
     void search_for_items();
     ItemStock* get_stock_pointer();
     void set_db_file(string db_file);
+    void load_items();
+    void save_items();
 };
 
 

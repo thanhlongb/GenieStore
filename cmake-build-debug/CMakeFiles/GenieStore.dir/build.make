@@ -60,132 +60,132 @@ include CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/main.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/main.cpp.o: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GenieStore.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/main.cpp.o -c /Volumes/btl44@fb/GenieStore/main.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/main.cpp.o -c /Volumes/btl44@fb/GenieStore/main.cpp
 
 CMakeFiles/GenieStore.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/main.cpp > CMakeFiles/GenieStore.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/main.cpp > CMakeFiles/GenieStore.dir/main.cpp.i
 
 CMakeFiles/GenieStore.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/main.cpp -o CMakeFiles/GenieStore.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/main.cpp -o CMakeFiles/GenieStore.dir/main.cpp.s
 
 CMakeFiles/GenieStore.dir/Item.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/Item.cpp.o: ../Item.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GenieStore.dir/Item.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/Item.cpp.o -c /Volumes/btl44@fb/GenieStore/Item.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/Item.cpp.o -c /Volumes/btl44@fb/GenieStore/Item.cpp
 
 CMakeFiles/GenieStore.dir/Item.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/Item.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/Item.cpp > CMakeFiles/GenieStore.dir/Item.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/Item.cpp > CMakeFiles/GenieStore.dir/Item.cpp.i
 
 CMakeFiles/GenieStore.dir/Item.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/Item.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/Item.cpp -o CMakeFiles/GenieStore.dir/Item.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/Item.cpp -o CMakeFiles/GenieStore.dir/Item.cpp.s
 
 CMakeFiles/GenieStore.dir/ItemStock.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/ItemStock.cpp.o: ../ItemStock.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GenieStore.dir/ItemStock.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/ItemStock.cpp.o -c /Volumes/btl44@fb/GenieStore/ItemStock.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/ItemStock.cpp.o -c /Volumes/btl44@fb/GenieStore/ItemStock.cpp
 
 CMakeFiles/GenieStore.dir/ItemStock.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/ItemStock.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/ItemStock.cpp > CMakeFiles/GenieStore.dir/ItemStock.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/ItemStock.cpp > CMakeFiles/GenieStore.dir/ItemStock.cpp.i
 
 CMakeFiles/GenieStore.dir/ItemStock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/ItemStock.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/ItemStock.cpp -o CMakeFiles/GenieStore.dir/ItemStock.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/ItemStock.cpp -o CMakeFiles/GenieStore.dir/ItemStock.cpp.s
 
 CMakeFiles/GenieStore.dir/node.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/node.cpp.o: ../node.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GenieStore.dir/node.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/node.cpp.o -c /Volumes/btl44@fb/GenieStore/node.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/node.cpp.o -c /Volumes/btl44@fb/GenieStore/node.cpp
 
 CMakeFiles/GenieStore.dir/node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/node.cpp > CMakeFiles/GenieStore.dir/node.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/node.cpp > CMakeFiles/GenieStore.dir/node.cpp.i
 
 CMakeFiles/GenieStore.dir/node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/node.cpp -o CMakeFiles/GenieStore.dir/node.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/node.cpp -o CMakeFiles/GenieStore.dir/node.cpp.s
 
 CMakeFiles/GenieStore.dir/LinkedList.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/LinkedList.cpp.o: ../LinkedList.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GenieStore.dir/LinkedList.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/LinkedList.cpp.o -c /Volumes/btl44@fb/GenieStore/LinkedList.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/LinkedList.cpp.o -c /Volumes/btl44@fb/GenieStore/LinkedList.cpp
 
 CMakeFiles/GenieStore.dir/LinkedList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/LinkedList.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/LinkedList.cpp > CMakeFiles/GenieStore.dir/LinkedList.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/LinkedList.cpp > CMakeFiles/GenieStore.dir/LinkedList.cpp.i
 
 CMakeFiles/GenieStore.dir/LinkedList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/LinkedList.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/LinkedList.cpp -o CMakeFiles/GenieStore.dir/LinkedList.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/LinkedList.cpp -o CMakeFiles/GenieStore.dir/LinkedList.cpp.s
 
 CMakeFiles/GenieStore.dir/ItemManager.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/ItemManager.cpp.o: ../ItemManager.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GenieStore.dir/ItemManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/ItemManager.cpp.o -c /Volumes/btl44@fb/GenieStore/ItemManager.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/ItemManager.cpp.o -c /Volumes/btl44@fb/GenieStore/ItemManager.cpp
 
 CMakeFiles/GenieStore.dir/ItemManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/ItemManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/ItemManager.cpp > CMakeFiles/GenieStore.dir/ItemManager.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/ItemManager.cpp > CMakeFiles/GenieStore.dir/ItemManager.cpp.i
 
 CMakeFiles/GenieStore.dir/ItemManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/ItemManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/ItemManager.cpp -o CMakeFiles/GenieStore.dir/ItemManager.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/ItemManager.cpp -o CMakeFiles/GenieStore.dir/ItemManager.cpp.s
 
 CMakeFiles/GenieStore.dir/Helper.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/Helper.cpp.o: ../Helper.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GenieStore.dir/Helper.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/Helper.cpp.o -c /Volumes/btl44@fb/GenieStore/Helper.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/Helper.cpp.o -c /Volumes/btl44@fb/GenieStore/Helper.cpp
 
 CMakeFiles/GenieStore.dir/Helper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/Helper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/Helper.cpp > CMakeFiles/GenieStore.dir/Helper.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/Helper.cpp > CMakeFiles/GenieStore.dir/Helper.cpp.i
 
 CMakeFiles/GenieStore.dir/Helper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/Helper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/Helper.cpp -o CMakeFiles/GenieStore.dir/Helper.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/Helper.cpp -o CMakeFiles/GenieStore.dir/Helper.cpp.s
 
 CMakeFiles/GenieStore.dir/Customer.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/Customer.cpp.o: ../Customer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GenieStore.dir/Customer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/Customer.cpp.o -c /Volumes/btl44@fb/GenieStore/Customer.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/Customer.cpp.o -c /Volumes/btl44@fb/GenieStore/Customer.cpp
 
 CMakeFiles/GenieStore.dir/Customer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/Customer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/Customer.cpp > CMakeFiles/GenieStore.dir/Customer.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/Customer.cpp > CMakeFiles/GenieStore.dir/Customer.cpp.i
 
 CMakeFiles/GenieStore.dir/Customer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/Customer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/Customer.cpp -o CMakeFiles/GenieStore.dir/Customer.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/Customer.cpp -o CMakeFiles/GenieStore.dir/Customer.cpp.s
 
 CMakeFiles/GenieStore.dir/CustomerList.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/CustomerList.cpp.o: ../CustomerList.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GenieStore.dir/CustomerList.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/CustomerList.cpp.o -c /Volumes/btl44@fb/GenieStore/CustomerList.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/CustomerList.cpp.o -c /Volumes/btl44@fb/GenieStore/CustomerList.cpp
 
 CMakeFiles/GenieStore.dir/CustomerList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/CustomerList.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/CustomerList.cpp > CMakeFiles/GenieStore.dir/CustomerList.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/CustomerList.cpp > CMakeFiles/GenieStore.dir/CustomerList.cpp.i
 
 CMakeFiles/GenieStore.dir/CustomerList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/CustomerList.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/CustomerList.cpp -o CMakeFiles/GenieStore.dir/CustomerList.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/CustomerList.cpp -o CMakeFiles/GenieStore.dir/CustomerList.cpp.s
 
 CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: CMakeFiles/GenieStore.dir/flags.make
 CMakeFiles/GenieStore.dir/CustomerManager.cpp.o: ../CustomerManager.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/btl44@fb/GenieStore/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GenieStore.dir/CustomerManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/CustomerManager.cpp.o -c /Volumes/btl44@fb/GenieStore/CustomerManager.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GenieStore.dir/CustomerManager.cpp.o -c /Volumes/btl44@fb/GenieStore/CustomerManager.cpp
 
 CMakeFiles/GenieStore.dir/CustomerManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GenieStore.dir/CustomerManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/CustomerManager.cpp > CMakeFiles/GenieStore.dir/CustomerManager.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/btl44@fb/GenieStore/CustomerManager.cpp > CMakeFiles/GenieStore.dir/CustomerManager.cpp.i
 
 CMakeFiles/GenieStore.dir/CustomerManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GenieStore.dir/CustomerManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/CustomerManager.cpp -o CMakeFiles/GenieStore.dir/CustomerManager.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/btl44@fb/GenieStore/CustomerManager.cpp -o CMakeFiles/GenieStore.dir/CustomerManager.cpp.s
 
 # Object files for target GenieStore
 GenieStore_OBJECTS = \

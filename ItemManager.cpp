@@ -7,17 +7,6 @@
 #include "Customer.h"
 #include "ItemManager.h"
 
-void ItemManager::test() {
-    Item item("T123-123", "hello world", Item::LOAN_TYPE[1],
-            Item::ITEM_TYPE[2], 12, 32.12, Item::GENRE[2]);
-    Item item1("T645-156", "fuk u", Item::LOAN_TYPE[1],
-              Item::ITEM_TYPE[2], 0, 32.12, Item::GENRE[2]);
-    this->stock.add(item);
-    this->stock.add(item1);
-    this->stock.load();
-//    this->stock.save();
-}
-
 void ItemManager::add_item() {
     cout << "Please provide information for new item:" << endl;
     cout << "Item id: ";
@@ -37,13 +26,19 @@ void ItemManager::add_item() {
         cout << "Item genre: " << endl;
         genre = Helper::prompt_user_option(Item::GENRE);
     }
-    // TODO: validate ID format
-    Item new_item(id, title,
+    Item item;
+    try {
+        item = Item(id, title,
                   Item::LOAN_TYPE[loan_type],
                   Item::ITEM_TYPE[item_type],
                   copies, rental_fee,
                   Item::GENRE[genre]);
-    this->stock.add(new_item);
+        this->stock.add(item);
+    } catch (const char* error) {
+        cout << error << endl;
+        return;
+    }
+    cout << "Item '" << item.get_id() << "' has been added to the stock." << endl;
 }
 
 void ItemManager::update_item() {
@@ -123,8 +118,13 @@ void ItemManager::update_item() {
 void ItemManager::delete_item() {
     cout << "Enter ID of the item you want to delete: ";
     string delete_item_id = Helper::read_user_string();
-    this->stock.remove(delete_item_id);
-    cout << "Item deleted.";
+    try {
+        this->stock.remove(delete_item_id);
+    } catch (const char* error) {
+        cout << error << endl;
+        return;
+    }
+    cout << "Item deleted." << endl;
 }
 
 void ItemManager::restock_item() {
@@ -134,10 +134,11 @@ void ItemManager::restock_item() {
     int quantity = Helper::read_user_int();
     try {
         this->stock.restock(restock_item_id, quantity);
-        cout << "Item restocked.";
     } catch (const char* error) {
         cout << error << endl;
+        return;
     }
+    cout << "Item restocked." << endl;
 }
 
 void ItemManager::display_all_items() {
@@ -177,4 +178,20 @@ ItemStock* ItemManager::get_stock_pointer() {
 
 void ItemManager::set_db_file(string db_file) {
     this->stock.set_data_file_name(db_file);
+}
+
+void ItemManager::load_items() {
+    try {
+        this->stock.load();
+    } catch (const char* error) {
+        cout << error << endl;
+    }
+}
+
+void ItemManager::save_items() {
+    try {
+        this->stock.save();
+    } catch (const char* error) {
+        cout << error << endl;
+    }
 }

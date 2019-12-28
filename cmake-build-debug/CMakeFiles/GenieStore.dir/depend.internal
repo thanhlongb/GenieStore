@@ -22,6 +22,7 @@ CMakeFiles/GenieStore.dir/CustomerManager.cpp.o
  /Volumes/btl44@fb/GenieStore/CustomerManager.h
  /Volumes/btl44@fb/GenieStore/Helper.h
  /Volumes/btl44@fb/GenieStore/Item.h
+ /Volumes/btl44@fb/GenieStore/ItemStock.h
  /Volumes/btl44@fb/GenieStore/LinkedList.h
  /Volumes/btl44@fb/GenieStore/node.h
 CMakeFiles/GenieStore.dir/Helper.cpp.o
@@ -32,6 +33,7 @@ CMakeFiles/GenieStore.dir/Item.cpp.o
  /Volumes/btl44@fb/GenieStore/Item.cpp
  /Volumes/btl44@fb/GenieStore/Item.h
 CMakeFiles/GenieStore.dir/ItemManager.cpp.o
+ /Volumes/btl44@fb/GenieStore/Customer.h
  /Volumes/btl44@fb/GenieStore/Helper.h
  /Volumes/btl44@fb/GenieStore/Item.h
  /Volumes/btl44@fb/GenieStore/ItemManager.cpp

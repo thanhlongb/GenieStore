@@ -18,6 +18,7 @@ public:
     static string read_next_word(string text, int* current_index, string delimiter = ",");
     static int get_size(const string options[]);
     static void print_options(const string options[], int count);
+    static int find_char_occurrence(string input_string, char c);
 private:
 };
 

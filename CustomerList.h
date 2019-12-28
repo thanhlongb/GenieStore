@@ -19,6 +19,7 @@ public:
     void update(string customer_id, Customer customer);
     Customer get(string customer_id);
     LinkedList<Customer> get_all();
+    void set_data_file_name(string data_file_name);
     void load();
     void save();
 };

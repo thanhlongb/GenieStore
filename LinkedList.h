@@ -21,6 +21,7 @@ public:
         // TODO: implement ~LinkedList
     }
     void add(T data) {
+        // TODO: check if item id is duplicated
         node<T> * new_node = new node<T>(data);
         if (this->head == NULL) {
             this->head = new_node;

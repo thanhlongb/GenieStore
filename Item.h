@@ -9,7 +9,6 @@ using namespace std;
 #ifndef GENIESTORE_ITEM_H
 #define GENIESTORE_ITEM_H
 
-
 class Item
 {
 private:
@@ -21,6 +20,7 @@ private:
     float rental_fee = 0;
     string rental_status = RENTAL_STATUS[0];
     string genre = GENRE[0];
+    bool is_valid_id(string id);
 public:
     explicit Item() {};
     explicit Item(string raw_data);
