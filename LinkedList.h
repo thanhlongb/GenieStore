@@ -1,5 +1,4 @@
 #include <string>
-#include <iostream>
 #include "node.h"
 
 using namespace std;
@@ -87,13 +86,10 @@ public:
     }
     void swap(int first_node_index, int second_node_index) {
         node<T>* first_node = this->get_node(first_node_index);
-        node<T>* second_node = this->get_node(first_node_index);
-        cout << first_node->get_data().get_title() << " and " << second_node->get_data().get_title() << endl;
+        node<T>* second_node = this->get_node(second_node_index);
         T temp = first_node->get_data();
         first_node->set_data(second_node->get_data());
         second_node->set_data(temp);
-        cout << first_node_index << " swapped with " << second_node_index << endl;
-        cout << first_node->get_data().get_title() << " and " << second_node->get_data().get_title() << endl;
     }
     int size() {
         int size = 0;

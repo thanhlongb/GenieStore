@@ -74,18 +74,20 @@ int Helper::find_char_occurrence(string input_string, char c) {
     return count;
 }
 
-void Helper::sort(LinkedList<Item>* list, bool ascending_order) {
+void Helper::sort(LinkedList<Item>* list) {
+    // order by id ASC
     Helper::quicksort(list, 0, list->size() - 1);
 }
 
 int Helper::partition(LinkedList<Item>* list, int low, int high) {
-    string pivot = list->get(high).get_title(); // pivot
+    // TODO: ref geeksforgeeks
+    string pivot = list->get(high).get_id(); // pivot
     int i = (low - 1); // Index of smaller element
 
     for (int j = low; j <= high - 1; j++)
     {
         // If current element is smaller than the pivot
-        if (strcmp(list->get(j).get_title().c_str(), pivot.c_str()) < 0) {
+        if (strcmp(list->get(j).get_id().c_str(), pivot.c_str()) < 0) {
             i++; // increment index of smaller element
             list->swap(i, j);
         }
@@ -95,6 +97,7 @@ int Helper::partition(LinkedList<Item>* list, int low, int high) {
 }
 
 void Helper::quicksort(LinkedList<Item>* list, int low, int high) {
+    // TODO: ref geeksforgeeks
     if (low < high) {
         /* pi is partitioning index, arr[p] is now
         at right place */

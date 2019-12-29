@@ -17,7 +17,7 @@ public:
     static int get_size(const string options[]);
     static void print_options(const string options[], int count);
     static int find_char_occurrence(string input_string, char c);
-    static void sort(LinkedList<Item>* list, bool ascending_order);
+    static void sort(LinkedList<Item>* list);
     static int partition(LinkedList<Item>* list, int low, int high);
     static void quicksort(LinkedList<Item>* list, int low, int high);
 private:
