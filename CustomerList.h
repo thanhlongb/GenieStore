@@ -1,7 +1,3 @@
-//
-// Created by longb on 12/26/19.
-//
-
 #ifndef GENIESTORE_CUSTOMERLIST_H
 #define GENIESTORE_CUSTOMERLIST_H
 

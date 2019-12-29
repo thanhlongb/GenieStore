@@ -1,7 +1,3 @@
-//
-// Created by longb on 12/26/19.
-//
-
 #include "CustomerList.h"
 #include "ItemStock.h"
 #ifndef GENIESTORE_CUSTOMERMANAGER_H
@@ -13,7 +9,6 @@ private:
     CustomerList customer_list;
     ItemStock* stock;
 public:
-    void test();
     void add_customer();
     void update_customer();
     void promote_a_customer();

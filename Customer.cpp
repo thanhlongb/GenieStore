@@ -1,24 +1,22 @@
-//
-// Created by longb on 12/26/19.
-//
-
 #include "Helper.h"
 #include "Customer.h"
 
 Customer::Customer(string raw_data) {
     int current_index = 0;
     this->id = Helper::read_next_word(raw_data, &current_index);
+    if (!is_valid_id(this->id)) throw "Invalid customer id.";
     this->name = Helper::read_next_word(raw_data, &current_index);
     this->address = Helper::read_next_word(raw_data, &current_index);
     this->phone = Helper::read_next_word(raw_data, &current_index);
     Helper::read_next_word(raw_data, &current_index); // skipping total borrowed items count
     this->tier = Helper::read_next_word(raw_data, &current_index);
     if (this->is_vip()) {
-        this->point = atoi(Helper::read_next_word(raw_data, &current_index).c_str());
+        this->reward_point = atoi(Helper::read_next_word(raw_data, &current_index).c_str());
     }
 }
 
 Customer::Customer(string id, string name, string address, string phone, string tier) {
+    if (!is_valid_id(id)) throw "Invalid customer id.";
     this->id = id;
     this->name = name;
     this->address = address;
@@ -50,11 +48,6 @@ LinkedList<Item> Customer::get_rentals() {
     return this->rentals;
 }
 
-int Customer::get_point() {
-    // TODO: try to implement this shit
-    return (this->is_vip()) ? this->point : 0;
-}
-
 void Customer::set_name(string name) {
     this->name = name;
 }
@@ -71,30 +64,31 @@ void Customer::set_tier(string tier) {
     this->tier = tier;
 }
 
-void Customer::add_rental(Item item) {
-    this->rentals.add(item);
-}
-
 void Customer::rent_item(Item item) {
-    // TODO: try to implement this shit
     if (this->is_guest()) {
         if (this->rentals.size() >= 2)
             throw "Guest customer can rent 2 items at a time.";
         if (item.is_2_day_loan())
             throw "Guest can't rent '2-day' loan type items.";
     } else if (this->is_vip()) {
-        point += 10;
+        this->reward_point += 10;
     }
     this->rentals.add(item);
 }
 
+void Customer::add_rental(Item item) {
+    this->rentals.add(item);
+}
+
+void Customer::use_reward_point() {
+    this->reward_point -= 100;
+}
+
 void Customer::return_item(string item_id) {
-    // TODO: try to implement this shit
     this->rentals.remove(item_id);
 }
 
 void Customer::promote() {
-    // TODO: how to make sure the customer has successfully RENTED & RETURNED more than 3 items???
     if (this->rentals.size() > 3) {
         if (this->is_guest()) {
             this->tier = TIER[1];
@@ -118,9 +112,22 @@ string Customer::to_string() {
     customer_string.append(::to_string(this->rentals.size()) + ",");
     customer_string.append(this->tier);
     if (this->is_vip()) {
-        customer_string.append("," + ::to_string(this->point));
+        customer_string.append("," + ::to_string(this->reward_point));
     }
     return customer_string;
+}
+
+bool Customer::is_valid_id(string id) {
+    if (id.length() != 4) return false;
+    if (id.at(0) != 'C') return false;
+    if (!isdigit(id.at(1)) ||
+        !isdigit(id.at(2)) ||
+        !isdigit(id.at(3))) return false;
+    return true;
+}
+
+bool Customer::is_eligible_for_free_item() {
+    return (this->is_vip() && this->reward_point >= 100);
 }
 
 bool Customer::is_guest() {

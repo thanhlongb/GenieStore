@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/Volumes/btl44@fb/GenieStore/Customer.cpp
+Helper.h
+/Volumes/btl44@fb/GenieStore/Helper.h
+Customer.h
+/Volumes/btl44@fb/GenieStore/Customer.h
+
 /Volumes/btl44@fb/GenieStore/Customer.h
 string
 -
@@ -13,6 +19,14 @@ Item.h
 /Volumes/btl44@fb/GenieStore/Item.h
 LinkedList.h
 /Volumes/btl44@fb/GenieStore/LinkedList.h
+
+/Volumes/btl44@fb/GenieStore/CustomerList.cpp
+fstream
+-
+iostream
+-
+CustomerList.h
+/Volumes/btl44@fb/GenieStore/CustomerList.h
 
 /Volumes/btl44@fb/GenieStore/CustomerList.h
 Customer.h
@@ -34,9 +48,25 @@ CustomerList.h
 ItemStock.h
 /Volumes/btl44@fb/GenieStore/ItemStock.h
 
+/Volumes/btl44@fb/GenieStore/Helper.cpp
+iostream
+-
+Helper.h
+/Volumes/btl44@fb/GenieStore/Helper.h
+
 /Volumes/btl44@fb/GenieStore/Helper.h
 string
 -
+LinkedList.h
+/Volumes/btl44@fb/GenieStore/LinkedList.h
+Item.h
+/Volumes/btl44@fb/GenieStore/Item.h
+
+/Volumes/btl44@fb/GenieStore/Item.cpp
+Helper.h
+/Volumes/btl44@fb/GenieStore/Helper.h
+Item.h
+/Volumes/btl44@fb/GenieStore/Item.h
 
 /Volumes/btl44@fb/GenieStore/Item.h
 string
@@ -60,6 +90,16 @@ ItemManager.h
 ItemStock.h
 /Volumes/btl44@fb/GenieStore/ItemStock.h
 
+/Volumes/btl44@fb/GenieStore/ItemStock.cpp
+fstream
+-
+iostream
+-
+ItemStock.h
+/Volumes/btl44@fb/GenieStore/ItemStock.h
+Helper.h
+/Volumes/btl44@fb/GenieStore/Helper.h
+
 /Volumes/btl44@fb/GenieStore/ItemStock.h
 Item.h
 /Volumes/btl44@fb/GenieStore/Item.h
@@ -69,10 +109,20 @@ LinkedList.h
 /Volumes/btl44@fb/GenieStore/LinkedList.h
 string
 -
+iostream
+-
 node.h
 /Volumes/btl44@fb/GenieStore/node.h
 
-/Volumes/btl44@fb/GenieStore/node.h
-cstddef
+/Volumes/btl44@fb/GenieStore/main.cpp
+iostream
 -
+ItemManager.h
+/Volumes/btl44@fb/GenieStore/ItemManager.h
+CustomerManager.h
+/Volumes/btl44@fb/GenieStore/CustomerManager.h
+Helper.h
+/Volumes/btl44@fb/GenieStore/Helper.h
+
+/Volumes/btl44@fb/GenieStore/node.h
 

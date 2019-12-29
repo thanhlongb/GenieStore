@@ -1,6 +1,3 @@
-//
-// Created by longb on 12/22/19.
-//
 #include <iostream>
 #include "Item.h"
 #include "Helper.h"
@@ -143,6 +140,7 @@ void ItemManager::restock_item() {
 
 void ItemManager::display_all_items() {
     LinkedList<Item> all_items = this->stock.get_all();
+    Helper::sort(&all_items, true);
     for (int i = 0; i < all_items.size(); i++) {
         Item item = all_items.get(i);
         cout << item.to_string() << endl;
@@ -153,7 +151,7 @@ void ItemManager::display_out_of_stock_items() {
     LinkedList<Item> all_items = this->stock.get_all();
     for (int i = 0; i < all_items.size(); i++) {
         Item item = all_items.get(i);
-        if (item.get_copies() == 0) {
+        if (item.is_out_of_stock()) {
             cout << item.to_string() << endl;
         }
     }

@@ -1,8 +1,3 @@
-//
-// Created by longb on 12/19/19.
-//
-#include <cstddef> // FIXME: need this shit for NULL
-
 #ifndef GENIESTORE_NODE_H
 #define GENIESTORE_NODE_H
 
@@ -14,7 +9,7 @@ private:
 public:
     node(T data) {
         this->data = data;
-        this->next = NULL;
+        this->next = nullptr;
     }
     ~node() {
         // TODO: implement ~node()

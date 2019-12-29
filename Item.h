@@ -1,6 +1,3 @@
-//
-// Created by longb on 12/19/19.
-//
 #include <string>
 #include <cstring>
 
@@ -43,6 +40,7 @@ public:
     void set_rental_fee(float rental_fee);
     void set_genre(string genre);
     string to_string();
+    bool is_out_of_stock();
     bool is_game();
     bool is_2_day_loan();
     static const string LOAN_TYPE[];

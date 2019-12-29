@@ -1,8 +1,6 @@
-//
-// Created by longb on 12/22/19.
-//
 #include <string>
-
+#include "LinkedList.h"
+#include "Item.h"
 using namespace std;
 
 #ifndef GENIESTORE_HELPER_H
@@ -19,7 +17,11 @@ public:
     static int get_size(const string options[]);
     static void print_options(const string options[], int count);
     static int find_char_occurrence(string input_string, char c);
+    static void sort(LinkedList<Item>* list, bool ascending_order);
+    static int partition(LinkedList<Item>* list, int low, int high);
+    static void quicksort(LinkedList<Item>* list, int low, int high);
 private:
+
 };
 
 

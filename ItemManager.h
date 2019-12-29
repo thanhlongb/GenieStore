@@ -1,6 +1,3 @@
-//
-// Created by longb on 12/22/19.
-//
 #include "ItemStock.h"
 
 #ifndef GENIESTORE_ITEMMANAGER_H

@@ -1,16 +1,6 @@
-//
-// Created by longb on 12/26/19.
-//
-
 #include <iostream>
 #include "Helper.h"
 #include "CustomerManager.h"
-
-void CustomerManager::test() {
-    this->customer_list.load();
-    this->rent_an_item();
-    this->display_all_customers();
-}
 
 void CustomerManager::add_customer() {
     cout << "Please provide information for new customer:" << endl;
@@ -24,9 +14,9 @@ void CustomerManager::add_customer() {
     string phone = Helper::read_user_string();
     cout << "Customer tier: " << endl;
     int tier = Helper::prompt_user_option(Customer::TIER);
-    // TODO: validate ID format
-    Customer new_customer(id, name, address, phone, Customer::TIER[tier]);
+    Customer new_customer;
     try {
+        new_customer = Customer(id, name, address, phone, Customer::TIER[tier]);
         this->customer_list.add(new_customer);
     } catch (const char* error) {
         cout << error << endl;
@@ -113,6 +103,10 @@ void CustomerManager::rent_an_item() {
         cout << error << endl;
         return;
     }
+    if (item.is_out_of_stock()) {
+        cout << "This item is out of stock." << endl;
+        return;
+    }
     cout << "Enter ID of the customer who want to rent '" << item.get_title() << "': ";
     string customer_id = Helper::read_user_string();
     try {
@@ -123,11 +117,22 @@ void CustomerManager::rent_an_item() {
     }
     if (customer.get_rentals().exist(item_id)) {
         // if the customer already renting this item
-        cout << "The customer already renting this item." << endl;
+        cout << "The customer '" << customer.get_name() << "' already renting this item." << endl;
         return;
     }
     item.destock(1);
-    customer.add_rental(item);
+    try {
+        customer.rent_item(item);
+        if (customer.is_eligible_for_free_item()) {
+            customer.use_reward_point();
+            cout << "Congrats! You received a free of charge item from using reward point." << endl;
+        } else {
+            cout << "You have successfully rented the item, the fee is $" << item.get_rental_fee() << "." << endl;
+        }
+    } catch (const char* error) {
+        cout << error << endl;
+        return;
+    }
     this->customer_list.update(customer_id, customer);
     this->stock->update(item_id, item);
 }
@@ -160,12 +165,12 @@ void CustomerManager::return_an_item() {
     } catch (const char* error) {
         cout << "This item might be deleted from stock." << endl;
         // removing the item from the customer rental list anyway
-        customer.get_rentals().remove(item_id);
+        customer.return_item(item_id);
         this->customer_list.update(customer.get_id(), customer);
         return;
     }
     item.restock(1);
-    customer.get_rentals().remove(item_id);
+    customer.return_item(item_id);
     this->stock->update(item_id, item);
     this->customer_list.update(customer.get_id(), customer);
 }
@@ -225,6 +230,7 @@ void CustomerManager::load_customers() {
         this->customer_list.load();
     } catch (const char* error) {
         cout << error << endl;
+        return;
     }
 }
 
@@ -233,5 +239,6 @@ void CustomerManager::save_customers() {
         this->customer_list.save();
     } catch (const char* error) {
         cout << error << endl;
+        return;
     }
 }

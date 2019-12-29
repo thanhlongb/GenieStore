@@ -1,6 +1,3 @@
-//
-// Created by longb on 12/19/19.
-//
 #include "Helper.h"
 #include "Item.h"
 
@@ -10,6 +7,7 @@ Item::Item(string raw_data) {
     } else {
         int current_index = 0;
         this->id = Helper::read_next_word(raw_data, &current_index);
+        if (!is_valid_id(this->id)) throw "Invalid item id.";
         this->title = Helper::read_next_word(raw_data, &current_index);
         this->item_type = Helper::read_next_word(raw_data, &current_index);
         this->loan_type = Helper::read_next_word(raw_data, &current_index);
@@ -37,6 +35,9 @@ Item::Item(string id, string title, string loan_type, string item_type,
 
 void Item::restock(int quantity) {
     if (quantity > 0) {
+        if (this->is_out_of_stock()) {
+            this->rental_status = RENTAL_STATUS[0];
+        }
         this->copies += quantity;
     }
 }
@@ -44,6 +45,9 @@ void Item::restock(int quantity) {
 void Item::destock(int quantity) {
     if (quantity > 0) {
         this->copies -= quantity;
+        if (this->is_out_of_stock()) {
+            this->rental_status = RENTAL_STATUS[1];
+        }
     }
 }
 
@@ -116,6 +120,10 @@ string Item::to_string() {
         item_string.append("," + this->genre);
     }
     return item_string;
+}
+
+bool Item::is_out_of_stock() {
+    return (this->copies == 0);
 }
 
 bool Item::is_game() {

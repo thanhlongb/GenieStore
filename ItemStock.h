@@ -1,6 +1,3 @@
-//
-// Created by longb on 12/19/19.
-//
 #include "Item.h"
 #include "LinkedList.h"
 #ifndef GENIESTORE_ITEMSTOCK_H

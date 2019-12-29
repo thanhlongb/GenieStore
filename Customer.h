@@ -1,7 +1,3 @@
-//
-// Created by longb on 12/26/19.
-//
-
 #include <string>
 #include "Item.h"
 #include "LinkedList.h"
@@ -19,7 +15,7 @@ private:
     string address = "";
     string phone = "";
     string tier = Customer::TIER[0];
-    int point = 0;
+    int reward_point = 0;
     LinkedList<Item> rentals;
 public:
     explicit Customer() {};
@@ -31,16 +27,18 @@ public:
     string get_phone();
     string get_tier();
     LinkedList<Item> get_rentals();
-    int get_point();
     void set_name(string name);
     void set_address(string address);
     void set_phone(string phone);
     void set_tier(string tier);
-    void add_rental(Item item);
     void rent_item(Item item);
+    void add_rental(Item item);
+    void use_reward_point();
     void return_item(string item_id);
     void promote();
     string to_string();
+    bool is_valid_id(string id);
+    bool is_eligible_for_free_item();
     bool is_guest();
     bool is_regular();
     bool is_vip();

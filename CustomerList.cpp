@@ -1,13 +1,13 @@
-//
-// Created by longb on 12/26/19.
-//
-
 #include <fstream>
 #include <iostream>
 #include "CustomerList.h"
 
 void CustomerList::add(Customer customer) {
-    this->customers.add(customer);
+    try {
+        this->customers.add(customer);
+    } catch (const char* error) {
+        throw error;
+    }
 }
 
 void CustomerList::update(string customer_id, Customer customer) {
@@ -41,12 +41,20 @@ void CustomerList::load() {
         Customer customer;
         while (getline(file, line)) {
             if (line[0] == 'C') { // this line contains customer information
-                customer = Customer(line);
-                this->customers.add(customer);
+                try {
+                    customer = Customer(line);
+                    this->customers.add(customer);
+                } catch (const char* error) {
+                    throw error;
+                }
             } else if (line[0] == 'I') { // this line contains item id
-                Item item(line);
-                customer.add_rental(item);
-                this->customers.update(customer.get_id(), customer);
+                try {
+                    Item item(line);
+                    customer.add_rental(item);
+                    this->customers.update(customer.get_id(), customer);
+                } catch (const char* error) {
+                    throw error;
+                }
             }
         }
     } else {

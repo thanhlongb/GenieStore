@@ -1,6 +1,3 @@
-//
-// Created by longb on 12/19/19.
-//
 #include <fstream>
 #include <iostream>
 #include "ItemStock.h"
@@ -9,7 +6,11 @@
 using namespace std;
 
 void ItemStock::add(Item item) {
-    this->items.add(item);
+    try {
+        this->items.add(item);
+    } catch (const char* error) {
+        throw error;
+    }
 }
 
 void ItemStock::remove(string item_id) {
@@ -83,7 +84,11 @@ void ItemStock::load() {
     ifstream file(this->data_file_name);
     if (file.is_open()) {
         while (getline(file, line)) {
-            this->items.add(Item(line));
+            try {
+                this->items.add(Item(line));
+            } catch (const char* error) {
+                throw error;
+            }
         }
     } else {
         // unable to open file
